@@ -1,0 +1,330 @@
+<!DOCTYPE html><html><head>
+      <title>operações-crud-javascript</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\freed\.trae\extensions\shd101wyy.markdown-preview-enhanced-0.8.19\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1 id="tutorial-sistema-de-gestão-de-biblioteca-com-nodejs-e-mysql">Tutorial: Sistema de Gestão de Biblioteca com Node.js e MySQL </h1>
+<p>** ATENÇÃO **: para essa prática, será necessário executar o script de banco de dados no arquivo <code>biblioteca.sql</code> para criar as tabelas e inserir os dados iniciais.</p>
+<h2 id="1-operações-crud">1. Operações CRUD </h2>
+<p><strong>CRUD</strong> é um acrônimo que representa as quatro operações básicas de manipulação de dados:</p>
+<ul>
+<li><strong>C</strong>reate (Criar): Inserir novos registros no banco de dados</li>
+<li><strong>R</strong>ead (Ler): Consultar e exibir dados existentes</li>
+<li><strong>U</strong>pdate (Atualizar): Modificar registros existentes</li>
+<li><strong>D</strong>elete (Deletar): Remover registros do banco de dados</li>
+</ul>
+<h3 id="exemplo-no-sistema-de-biblioteca">Exemplo no Sistema de Biblioteca: </h3>
+<ul>
+<li><strong>Create</strong>: Adicionar um novo livro</li>
+<li><strong>Read</strong>: Listar todos os livros ou visualizar detalhes de um livro</li>
+<li><strong>Update</strong>: Editar informações de um livro existente</li>
+<li><strong>Delete</strong>: Remover um livro do sistema</li>
+</ul>
+<h2 id="2-protocolo-http-e-verbos-http">2. Protocolo HTTP e Verbos HTTP </h2>
+<p>O <strong>HTTP (HyperText Transfer Protocol)</strong> é o protocolo de comunicação usado na web. Os verbos HTTP definem o tipo de ação que queremos realizar:</p>
+<h3 id="principais-verbos-http">Principais Verbos HTTP: </h3>
+<h4 id="get">GET </h4>
+<ul>
+<li><strong>Propósito</strong>: Recuperar dados do servidor</li>
+<li><strong>Características</strong>: Seguro, idempotente, não modifica dados</li>
+<li><strong>Exemplo</strong>: <code>GET /livros</code> - busca todos os livros</li>
+</ul>
+<h4 id="post">POST </h4>
+<ul>
+<li><strong>Propósito</strong>: Enviar dados para criar novos recursos</li>
+<li><strong>Características</strong>: Não é idempotente, modifica o estado do servidor</li>
+<li><strong>Exemplo</strong>: <code>POST /livros</code> - cria um novo livro</li>
+</ul>
+<h4 id="put">PUT </h4>
+<ul>
+<li><strong>Propósito</strong>: Atualizar um recurso existente completamente</li>
+<li><strong>Características</strong>: Idempotente, substitui o recurso inteiro</li>
+<li><strong>Exemplo</strong>: <code>PUT /livros/1</code> - atualiza o livro com ID 1</li>
+</ul>
+<h4 id="delete">DELETE </h4>
+<ul>
+<li><strong>Propósito</strong>: Remover um recurso do servidor</li>
+<li><strong>Características</strong>: Idempotente, remove o recurso</li>
+<li><strong>Exemplo</strong>: <code>DELETE /livros/1</code> - remove o livro com ID 1</li>
+</ul>
+<h3 id="mapeamento-crud--http">Mapeamento CRUD → HTTP: </h3>
+<table>
+<thead>
+<tr>
+<th>Operação CRUD</th>
+<th>Verbo HTTP</th>
+<th>Exemplo de Rota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create</td>
+<td>POST</td>
+<td>POST /livros</td>
+</tr>
+<tr>
+<td>Read</td>
+<td>GET</td>
+<td>GET /livros</td>
+</tr>
+<tr>
+<td>Update</td>
+<td>PUT</td>
+<td>PUT /livros/1</td>
+</tr>
+<tr>
+<td>Delete</td>
+<td>DELETE</td>
+<td>DELETE /livros/1</td>
+</tr>
+</tbody>
+</table>
+<h2 id="3-conexão-com-banco-de-dados-mysql">3. Conexão com Banco de Dados MySQL </h2>
+<p>Para conectar uma aplicação Node.js ao MySQL, você precisa:</p>
+<h3 id="requisitos">Requisitos: </h3>
+<ol>
+<li><strong>Servidor MySQL</strong> instalado e rodando</li>
+<li><strong>Banco de dados</strong> criado</li>
+<li><strong>Credenciais de acesso</strong> (usuário e senha)</li>
+<li><strong>Driver MySQL</strong> para Node.js (mysql2)</li>
+</ol>
+<h3 id="configuração-da-conexão">Configuração da Conexão: </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-const">const</span> mysql <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'mysql2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword keyword-const">const</span> connection <span class="token operator">=</span> mysql<span class="token punctuation">.</span><span class="token method function property-access">createConnection</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+    <span class="token literal-property property">host</span><span class="token operator">:</span> <span class="token string">'localhost'</span><span class="token punctuation">,</span>        <span class="token comment">// Endereço do servidor MySQL</span>
+    <span class="token literal-property property">user</span><span class="token operator">:</span> <span class="token string">'root'</span><span class="token punctuation">,</span>            <span class="token comment">// Usuário do banco</span>
+    <span class="token literal-property property">password</span><span class="token operator">:</span> <span class="token string">'sua_senha'</span><span class="token punctuation">,</span>   <span class="token comment">// Senha do usuário</span>
+    <span class="token literal-property property">database</span><span class="token operator">:</span> <span class="token string">'biblioteca'</span>   <span class="token comment">// Nome do banco de dados</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// Testar conexão</span>
+connection<span class="token punctuation">.</span><span class="token method function property-access">connect</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">error</span><span class="token punctuation">(</span><span class="token string">'Erro ao conectar:'</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword control-flow keyword-return">return</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Conectado ao MySQL!'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h3 id="executando-consultas">Executando Consultas: </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token comment">// SELECT</span>
+connection<span class="token punctuation">.</span><span class="token method function property-access">query</span><span class="token punctuation">(</span><span class="token string">'SELECT * FROM livro'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> results</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword control-flow keyword-throw">throw</span> err<span class="token punctuation">;</span>
+    <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span>results<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// INSERT</span>
+connection<span class="token punctuation">.</span><span class="token method function property-access">query</span><span class="token punctuation">(</span>
+    <span class="token string">'INSERT INTO livro (titulo, ano_publicacao) VALUES (?, ?)'</span><span class="token punctuation">,</span>
+    <span class="token punctuation">[</span><span class="token string">'Meu Livro'</span><span class="token punctuation">,</span> <span class="token number">2023</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+    <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> result</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token keyword control-flow keyword-throw">throw</span> err<span class="token punctuation">;</span>
+        <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">log</span><span class="token punctuation">(</span><span class="token string">'Livro inserido com ID:'</span><span class="token punctuation">,</span> result<span class="token punctuation">.</span><span class="token property-access">insertId</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h2 id="4-configuração-do-sistema-com-javascript">4. Configuração do Sistema com JavaScript </h2>
+<h3 id="41-instalação-de-pacotes">4.1 Instalação de Pacotes </h3>
+<h4 id="inicializar-projeto-nodejs">Inicializar projeto Node.js: </h4>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">npm</span> init <span class="token parameter variable">-y</span>
+</code></pre><h4 id="instalar-dependências-principais">Instalar dependências principais: </h4>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">npm</span> <span class="token function">install</span> express method-override ejs body-parser mysql2
+</code></pre><h4 id="instalar-dependência-de-desenvolvimento">Instalar dependência de desenvolvimento: </h4>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">npm</span> <span class="token function">install</span> --save-dev nodemon
+</code></pre><h3 id="42-estrutura-de-pastas-e-arquivos">4.2 Estrutura de Pastas e Arquivos </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>projeto-biblioteca/
+├── app.js              # Arquivo principal do servidor
+├── package.json        # Configurações e dependências
+├── views/              # Templates EJS
+│   ├── index.ejs       # Página inicial
+│   ├── criar.ejs       # Formulário de criação
+│   ├── listar.ejs      # Lista de livros
+│   └── editar.ejs      # Formulário de edição
+└── public/             # Arquivos estáticos (CSS, JS, imagens)
+    ├── css/
+    ├── js/
+    └── images/
+</code></pre><h3 id="43-arquivo-packagejson">4.3 Arquivo package.json: </h3>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"sistema-biblioteca"</span><span class="token punctuation">,</span>
+  <span class="token property">"version"</span><span class="token operator">:</span> <span class="token string">"1.0.0"</span><span class="token punctuation">,</span>
+  <span class="token property">"main"</span><span class="token operator">:</span> <span class="token string">"app.js"</span><span class="token punctuation">,</span>
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"node app.js"</span><span class="token punctuation">,</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"nodemon app.js"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"dependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"express"</span><span class="token operator">:</span> <span class="token string">"^4.18.2"</span><span class="token punctuation">,</span>
+    <span class="token property">"method-override"</span><span class="token operator">:</span> <span class="token string">"^3.0.0"</span><span class="token punctuation">,</span>
+    <span class="token property">"ejs"</span><span class="token operator">:</span> <span class="token string">"^3.1.9"</span><span class="token punctuation">,</span>
+    <span class="token property">"body-parser"</span><span class="token operator">:</span> <span class="token string">"^1.20.2"</span><span class="token punctuation">,</span>
+    <span class="token property">"mysql2"</span><span class="token operator">:</span> <span class="token string">"^3.6.5"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">"devDependencies"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"nodemon"</span><span class="token operator">:</span> <span class="token string">"^3.0.2"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="5-explicação-dos-pacotes">5. Explicação dos Pacotes </h2>
+<h3 id="51-express">5.1 Express </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-const">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword keyword-const">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><ul>
+<li><strong>Função</strong>: Framework web para Node.js</li>
+<li><strong>Uso</strong>: Criar servidor HTTP, definir rotas, gerenciar middlewares</li>
+<li><strong>Benefícios</strong>: Simplifica criação de APIs e aplicações web</li>
+</ul>
+<h3 id="52-method-override">5.2 Method-Override </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-const">const</span> methodOverride <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'method-override'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span><span class="token function">methodOverride</span><span class="token punctuation">(</span><span class="token string">'_method'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><ul>
+<li><strong>Função</strong>: Permite usar verbos HTTP PUT e DELETE em formulários HTML</li>
+<li><strong>Uso</strong>: HTML só suporta GET e POST nativamente</li>
+<li><strong>Implementação</strong>: Adiciona <code>?_method=PUT</code> ou <code>?_method=DELETE</code> na URL</li>
+</ul>
+<h3 id="53-ejs-embedded-javascript">5.3 EJS (Embedded JavaScript) </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code>app<span class="token punctuation">.</span><span class="token method function property-access">set</span><span class="token punctuation">(</span><span class="token string">'view engine'</span><span class="token punctuation">,</span> <span class="token string">'ejs'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><ul>
+<li><strong>Função</strong>: Engine de template para gerar HTML dinâmico</li>
+<li><strong>Uso</strong>: Inserir dados JavaScript em páginas HTML</li>
+<li><strong>Sintaxe</strong>: <code>&lt;%= variavel %&gt;</code> para exibir dados, <code>&lt;% codigo %&gt;</code> para lógica</li>
+</ul>
+<h3 id="54-body-parser">5.4 Body-Parser </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-const">const</span> bodyParser <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'body-parser'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token method function property-access">use</span><span class="token punctuation">(</span>bodyParser<span class="token punctuation">.</span><span class="token method function property-access">urlencoded</span><span class="token punctuation">(</span><span class="token punctuation">{</span> <span class="token literal-property property">extended</span><span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><ul>
+<li><strong>Função</strong>: Middleware para processar dados de formulários</li>
+<li><strong>Uso</strong>: Converte dados POST em objeto JavaScript acessível via <code>req.body</code></li>
+<li><strong>Tipos</strong>: Suporta URL-encoded e JSON</li>
+</ul>
+<h3 id="55-mysql2">5.5 MySQL2 </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code><span class="token keyword keyword-const">const</span> mysql <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'mysql2'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><ul>
+<li><strong>Função</strong>: Driver para conectar Node.js ao MySQL</li>
+<li><strong>Uso</strong>: Executar consultas SQL, gerenciar conexões</li>
+<li><strong>Vantagens</strong>: Suporte a Promises, melhor performance que mysql</li>
+</ul>
+<h2 id="6-execução-do-servidor">6. Execução do Servidor </h2>
+<h3 id="61-execução-normal-com-node">6.1 Execução Normal (com Node) </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code><span class="token function">node</span> app.js
+</code></pre><ul>
+<li><strong>Características</strong>:
+<ul>
+<li>Executa o servidor uma vez</li>
+<li>Para reiniciar após mudanças, precisa parar (Ctrl+C) e executar novamente</li>
+<li>Usado em produção</li>
+</ul>
+</li>
+</ul>
+<h3 id="62-execução-com-nodemon">6.2 Execução com Nodemon </h3>
+<pre data-role="codeBlock" data-info="bash" class="language-bash bash"><code>npx nodemon app.js
+<span class="token comment"># ou</span>
+<span class="token function">npm</span> run dev
+</code></pre><ul>
+<li><strong>Características</strong>:
+<ul>
+<li>Monitora mudanças nos arquivos automaticamente</li>
+<li>Reinicia o servidor quando detecta alterações</li>
+<li>Ideal para desenvolvimento</li>
+<li>Economiza tempo durante o desenvolvimento</li>
+</ul>
+</li>
+</ul>
+<h3 id="63-configuração-no-packagejson">6.3 Configuração no package.json: </h3>
+<pre data-role="codeBlock" data-info="json" class="language-json json"><code><span class="token punctuation">{</span>
+  <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"start"</span><span class="token operator">:</span> <span class="token string">"node app.js"</span><span class="token punctuation">,</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"nodemon app.js"</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="7-fluxo-de-funcionamento-do-sistema">7. Fluxo de Funcionamento do Sistema </h2>
+<h3 id="71-inicialização">7.1 Inicialização: </h3>
+<ol>
+<li>Node.js carrega o <code>app.js</code></li>
+<li>Express cria o servidor HTTP</li>
+<li>Conexão com MySQL é estabelecida</li>
+<li>Middlewares são configurados</li>
+<li>Rotas são definidas</li>
+<li>Servidor fica escutando na porta 3000</li>
+</ol>
+<h3 id="72-processamento-de-requisições">7.2 Processamento de Requisições: </h3>
+<ol>
+<li><strong>Cliente</strong> faz requisição HTTP</li>
+<li><strong>Express</strong> identifica a rota correspondente</li>
+<li><strong>Middleware</strong> processa dados (body-parser, method-override)</li>
+<li><strong>Controlador</strong> executa a lógica de negócio</li>
+<li><strong>MySQL</strong> executa consultas no banco</li>
+<li><strong>EJS</strong> renderiza a página com os dados</li>
+<li><strong>Resposta</strong> é enviada ao cliente</li>
+</ol>
+<h2 id="8-exemplo-prático-criar-um-livro">8. Exemplo Prático: Criar um Livro </h2>
+<h3 id="81-formulário-html-criarejs">8.1 Formulário HTML (criar.ejs): </h3>
+<pre data-role="codeBlock" data-info="html" class="language-html html"><code><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>form</span> <span class="token attr-name">action</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>/livros<span class="token punctuation">"</span></span> <span class="token attr-name">method</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>POST<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>text<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>titulo<span class="token punctuation">"</span></span> <span class="token attr-name">required</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>input</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>number<span class="token punctuation">"</span></span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>ano_publicacao<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>submit<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span>Criar Livro<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>form</span><span class="token punctuation">&gt;</span></span>
+</code></pre><h3 id="82-rota-no-express-appjs">8.2 Rota no Express (app.js): </h3>
+<pre data-role="codeBlock" data-info="javascript" class="language-javascript javascript"><code>app<span class="token punctuation">.</span><span class="token method function property-access">post</span><span class="token punctuation">(</span><span class="token string">'/livros'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">req<span class="token punctuation">,</span> res</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword keyword-const">const</span> <span class="token punctuation">{</span> titulo<span class="token punctuation">,</span> ano_publicacao <span class="token punctuation">}</span> <span class="token operator">=</span> req<span class="token punctuation">.</span><span class="token property-access">body</span><span class="token punctuation">;</span>
+    
+    <span class="token keyword keyword-const">const</span> query <span class="token operator">=</span> <span class="token string">'INSERT INTO livro (titulo, ano_publicacao) VALUES (?, ?)'</span><span class="token punctuation">;</span>
+    
+    connection<span class="token punctuation">.</span><span class="token method function property-access">query</span><span class="token punctuation">(</span>query<span class="token punctuation">,</span> <span class="token punctuation">[</span>titulo<span class="token punctuation">,</span> ano_publicacao<span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">err<span class="token punctuation">,</span> result</span><span class="token punctuation">)</span> <span class="token arrow operator">=&gt;</span> <span class="token punctuation">{</span>
+        <span class="token keyword control-flow keyword-if">if</span> <span class="token punctuation">(</span>err<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token console class-name">console</span><span class="token punctuation">.</span><span class="token method function property-access">error</span><span class="token punctuation">(</span><span class="token string">'Erro:'</span><span class="token punctuation">,</span> err<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword control-flow keyword-return">return</span> res<span class="token punctuation">.</span><span class="token method function property-access">status</span><span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token method function property-access">send</span><span class="token punctuation">(</span><span class="token string">'Erro interno'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        res<span class="token punctuation">.</span><span class="token method function property-access">redirect</span><span class="token punctuation">(</span><span class="token string">'/livros'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><h3 id="83-fluxo-completo">8.3 Fluxo Completo: </h3>
+<ol>
+<li>Usuário preenche formulário e clica "Criar Livro"</li>
+<li>Browser envia POST para <code>/livros</code></li>
+<li>body-parser extrai dados do formulário</li>
+<li>Rota POST executa query INSERT no MySQL</li>
+<li>Após sucesso, redireciona para lista de livros</li>
+<li>Lista atualizada é exibida ao usuário</li>
+</ol>
+<h2 id="conclusão">Conclusão </h2>
+<p>Este sistema demonstra os conceitos fundamentais de desenvolvimento web com Node.js:</p>
+<ul>
+<li><strong>CRUD</strong> completo para gestão de dados</li>
+<li><strong>HTTP</strong> para comunicação cliente-servidor</li>
+<li><strong>MySQL</strong> para persistência de dados</li>
+<li><strong>Express</strong> para estruturação da aplicação</li>
+<li><strong>EJS</strong> para interfaces dinâmicas</li>
+</ul>
+<p>O resultado é uma aplicação web funcional que pode ser expandida com mais funcionalidades conforme necessário.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

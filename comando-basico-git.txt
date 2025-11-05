@@ -1,0 +1,37 @@
+principais comandos basicos do git
+
+1) configurado nome do usuario
+git config --global user.name nome-do-seu-usuario
+
+2)configurado e-mail do usuario
+git config --global user.email email-do-seu-usuario
+
+3) verificar o usuario configurado
+git config user.name
+
+4) verificar o e-mail configurado
+git config user.email
+
+5) iniciar um repositorio
+git init
+
+6) adicionar os arquivos para
+o envio ao github
+git add .
+
+7) adicionar mensagem sobre
+os arqquivos para o envio
+ao github
+git commit -m "arquivos iniciar
+
+8) alterar a nome da ramificaçao
+do repositorio local (computador ou notebook) para 'main'
+git branch -m main
+
+9) referenciar o repositorio local
+para o repositorio remoto (github)
+git remote add origin https://github.com/seu-repositorio-github.git
+
+10) realizar o envio do repositorio
+local para o remoto
+git push -u origin main

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Livros - Sistema de Biblioteca</title>
+</head>
+<body>
+    <h1>Lista de Livros</h1>
+    
+    <p><a href="/livros/novo">+ Adicionar Novo Livro</a></p>
+    
+    <% if (livros.length === 0) { %>
+        <p>Nenhum livro encontrado no sistema.</p>
+    <% } else { %>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Ano</th>
+                    <th>Editora</th>
+                    <th>ISBN</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% livros.forEach(livro => { %>
+                    <tr>
+                        <td><%= livro.id %></td>
+                        <td><%= livro.titulo %></td>
+                        <td><%= livro.ano_publicacao || 'N/A' %></td>
+                        <td><%= livro.editora || 'N/A' %></td>
+                        <td><%= livro.isbn || 'N/A' %></td>
+                        <td>
+                            <a href="/editar/<%= livro.id %>">Editar</a>
+                            |
+                            <form action="/deletar/<%= livro.id %>?_method=DELETE" method="POST" style="display: inline;">
+                                <button type="submit" onclick="return confirm('Tem certeza que deseja excluir este livro?')">
+                                    Excluir
+                                </button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+        
+        <p><strong>Total de livros:</strong> <%= livros.length %></p>
+    <% } %>
+    
+    <hr>
+    
+    <p><strong>Navegação:</strong></p>
+    <p>
+        <a href="/">← Voltar ao Início</a> | 
+        <a href="/criar">Adicionar Novo Livro</a>
+    </p>
+</body>
+</html>
