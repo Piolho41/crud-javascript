@@ -22,11 +22,11 @@ git add .
 7) adicionar mensagem sobre
 os arqquivos para o envio
 ao github
-git commit -m "arquivos iniciar
+git commit -m "arquivos iniciais"
 
 8) alterar a nome da ramificaçao
 do repositorio local (computador ou notebook) para 'main'
-git branch -m main
+git branch -M main
 
 9) referenciar o repositorio local
 para o repositorio remoto (github)
@@ -35,3 +35,12 @@ git remote add origin https://github.com/seu-repositorio-github.git
 10) realizar o envio do repositorio
 local para o remoto
 git push -u origin main
+
+obs: depois de confirmado o envio do repositorio
+local para o remoto, toda alteraçao posterior 
+devera ser enviada ao github com os comandos 
+a seguir
+
+git add .
+
+git 
